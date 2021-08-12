@@ -1,4 +1,4 @@
-FROM docker.io/library/kong:latest
+FROM docker.io/library/kong:ubuntu
 
 # Cloudfoundry will use this port
 ENV PORT 8000

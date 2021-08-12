@@ -11,4 +11,6 @@ RUN apt update && \
     
 COPY docker-entrypoint.sh /docker-entrypoint.sh
 
+RUN chmod +x /docker-entrypoint.sh && chown kong /docker-entrypoint.sh
+
 USER kong

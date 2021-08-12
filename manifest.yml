@@ -1,0 +1,5 @@
+---
+applications:
+  - docker:
+      image: gcr.io/sre-docker-registry/github.com/uktrade/docker-kong:latest 
+  

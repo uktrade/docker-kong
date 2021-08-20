@@ -6,11 +6,13 @@ ENV PORT 8000
 USER root
 
 RUN apt update && \
-    apt install -y jq && \
-    mv /docker-entrypoint.sh /_docker-entrypoint.sh
-    
-COPY docker-entrypoint.sh /docker-entrypoint.sh
+    apt install -y jq wget # && \
+    #mv /docker-entrypoint.sh /_docker-entrypoint.sh
 
-RUN chmod +x /docker-entrypoint.sh && chown kong /docker-entrypoint.sh
+RUN wget https://s3.amazonaws.com/rds-downloads/rds-combined-ca-bundle.pem
+    
+#COPY docker-entrypoint.sh /docker-entrypoint.sh
+
+#RUN chmod +x /docker-entrypoint.sh && chown kong /docker-entrypoint.sh
 
 USER kong
